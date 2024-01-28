@@ -1,3 +1,9 @@
+import { NativeModules } from 'react-native';
+import ModernQRScanner from './src/ModernQRScanner';
 
-import QrcodeScanner from './src/QrcodeScanner';
-export default QrcodeScanner;
+const QRReader = (fileUrl) => {
+  const { QRScanReader } = NativeModules;
+  return QRScanReader.readerQR(fileUrl);
+};
+
+export { ModernQRScanner, QRReader };

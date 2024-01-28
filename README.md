@@ -1,60 +1,54 @@
 
-# react-native-modern-qrscanner
+# React Native Modern QR Scanner
 
-A modern-designed and powerful QR code scanner for React Native with advanced features.
+This project provides a modern-designed and powerful QR code scanner for React Native applications.
 
 ## Features
 
-- Modern and user-friendly interface
-- Fast and efficient QR code scanning
-- Customizable styles and themes
-- Supports both Android and iOS devices
-- Easy integration into React Native projects
+- Scan QR codes using camera.
+- Integrate easily with React Native projects.
+- Support for Android and iOS.
 
 ## Installation
+
+To install the package, run:
 
 ```bash
 npm install react-native-modern-qrscanner
 ```
 
+or
+
+```bash
+yarn add react-native-modern-qrscanner
+```
+
 ## Usage
 
-Import the `QRScanner` component in your React Native application:
+Import `ModernQRScanner` in your React Native application:
 
 ```javascript
-import QRScanner from 'react-native-modern-qrscanner';
+import { ModernQRScanner } from 'react-native-modern-qrscanner';
 ```
 
-Then, use the component in your app:
+Use the component in your app:
 
-```javascript
-<QRScanner onScanSuccess={this.handleScanSuccess} />
+```jsx
+<ModernQRScanner onQRCodeScanned={(data) => console.log(data)} />
 ```
 
-Define the callback function for successful scans:
+## Testing
 
-```javascript
-handleScanSuccess = (data) => {
-  // Process the scanned data
-  console.log("Scanned QR Code:", data);
-};
-```
+To test the module in your project, follow these steps:
 
-## Customization
-
-You can customize the scanner's appearance and behavior using various props:
-
-```javascript
-<QRScanner
-  onScanSuccess={this.handleScanSuccess}
-  cameraStyle={{ ... }}
-  scannerAreaStyle={{ ... }}
-/>
-```
+1. Install the module in your React Native project.
+2. Import and integrate `ModernQRScanner` into your app.
+3. Run your app on a physical device or emulator.
+4. Test the QR scanning functionality.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request with any improvements or suggestions.
+Contributions to the project are welcome. Please fork the repository and submit a pull request with your changes.
 
 ## License
 
