@@ -1,17 +1,16 @@
 
 # React Native Modern QR Scanner
 
-This project provides a modern-designed and powerful QR code scanner for React Native applications.
+A powerful and customizable QR code scanner component for React Native applications.
 
 ## Features
 
-- Scan QR codes using camera.
-- Integrate easily with React Native projects.
-- Support for Android and iOS.
+- Advanced QR code scanning capabilities using React Native Camera.
+- Customizable scanning viewfinder and overlay.
+- Supports both iOS and Android platforms.
+- Provides hooks for various QR code scanning events.
 
 ## Installation
-
-To install the package, run:
 
 ```bash
 npm install react-native-modern-qrscanner
@@ -25,31 +24,36 @@ yarn add react-native-modern-qrscanner
 
 ## Usage
 
-Import `ModernQRScanner` in your React Native application:
+Import `ModernQRScanner` and use it in your React Native application.
 
 ```javascript
 import { ModernQRScanner } from 'react-native-modern-qrscanner';
+
+// Example usage
+<ModernQRScanner
+  onRead={(e) => console.log('QR code detected:', e)}
+  // other props
+/>
 ```
 
-Use the component in your app:
+## Props
 
-```jsx
-<ModernQRScanner onQRCodeScanned={(data) => console.log(data)} />
-```
+- `onRead`: Callback function invoked when a QR code is detected.
+- `renderTopView`: Custom render function for the top overlay view.
+- `renderBottomView`: Custom render function for the bottom overlay view.
+- `rectHeight`, `rectWidth`: Dimensions for the scanning area.
+- `flashMode`: Enable or disable the camera flash.
+- `finderX`, `finderY`: Position offsets for the scanning viewfinder.
+- ...and more.
 
-## Testing
+## Customization
 
-To test the module in your project, follow these steps:
-
-1. Install the module in your React Native project.
-2. Import and integrate `ModernQRScanner` into your app.
-3. Run your app on a physical device or emulator.
-4. Test the QR scanning functionality.
-
-## Contributing
-
-Contributions to the project are welcome. Please fork the repository and submit a pull request with your changes.
+You can customize the scanner viewfinder, overlay styles, and more using the available props.
 
 ## License
 
 This project is licensed under the MIT License.
+
+## Contributing
+
+Contributions are welcome. Please read the contributing guide for more details.

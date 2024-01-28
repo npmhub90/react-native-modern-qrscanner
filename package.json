@@ -1,6 +1,6 @@
 {
   "name": "react-native-modern-qrscanner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A modern-designed and powerful QR code scanner for React Native with advanced features.",
   "main": "index.js",
   "nativePackage": true,
