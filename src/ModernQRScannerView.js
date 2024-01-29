@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
+  Image,
   Animated,
   Easing,
-  Image
 } from 'react-native';
 
-// 별도의 유틸리티 파일로 이동 가능한 스타일 계산 함수들
 const calculateBorderSize = (props, isCornerOffset) => {
   if (isCornerOffset) {
     return {
@@ -22,7 +21,7 @@ const calculateBorderSize = (props, isCornerOffset) => {
 export default class ModernQRScannerView extends Component {
   static defaultProps = {
     maskColor: '#0000004D',
-    cornerColor: 'red',
+    cornerColor: '#D3FF00',
     borderColor: '#000000',
     rectHeight: 200,
     rectWidth: 200,
@@ -33,7 +32,7 @@ export default class ModernQRScannerView extends Component {
     isCornerOffset: true,
     bottomHeight: 100,
     scanBarAnimateTime: 2500,
-    scanBarColor: 'red',
+    scanBarColor: '#D3FF00',
     scanBarImage: null,
     scanBarHeight: 1.5,
     scanBarMargin: 6,
@@ -55,6 +54,7 @@ export default class ModernQRScannerView extends Component {
   componentWillUnmount() {
     this.isClosed = true;
   }
+
 
   startScannerLineMove = () => {
     if (this.isClosed) return;
@@ -95,15 +95,18 @@ export default class ModernQRScannerView extends Component {
   };
 
   render() {
-    const animatedStyle = {
-      transform: [{ translateY: this.state.animatedValue }],
+    const { rectHeight, rectWidth } = this.props;
+    const viewfinderStyle = {
+      height: rectHeight,
+      width: rectWidth,
+      alignItems: 'center',
+      justifyContent: 'center',
     };
-
     const borderSize = calculateBorderSize(this.props, this.props.isCornerOffset);
 
     return (
       <View style={styles.container}>
-        <View style={[styles.viewfinder, this.props.rectHeight, this.props.rectWidth]}>
+        <View style={viewfinderStyle}>
           <View style={[borderSize, styles.borderStyle, { borderColor: this.props.borderColor, borderWidth: this.props.borderWidth }]} />
 
           {/* Corner Styles */}
@@ -113,9 +116,7 @@ export default class ModernQRScannerView extends Component {
           <View style={[styles.cornerStyle, styles.bottomRightCorner, { borderColor: this.props.cornerColor, borderRightWidth: this.props.cornerBorderWidth, borderBottomWidth: this.props.cornerBorderWidth }]} />
           
           {/* Scan Bar */}
-          <View>
-            {this.renderScanBar()}
-          </View>
+          {this.renderScanBar()}
         </View>
       </View>
     );
@@ -124,24 +125,20 @@ export default class ModernQRScannerView extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0,
   },
   viewfinder: {
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   borderStyle: {
-    // Border style properties
+    position: 'absolute',
   },
   cornerStyle: {
     position: 'absolute',
-    height: 20, // 예시 값, 실제로는 props로부터 받은 값을 사용
-    width: 20,  // 예시 값, 실제로는 props로부터 받은 값을 사용
+    height: 20,
+    width: 20,
+    borderRadius: 5,
   },
   topLeftCorner: {
     top: 0,
@@ -159,52 +156,4 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0
-  },
-  viewfinder: {
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  topLeftCorner: {
-    position: 'absolute',
-    top: 0,
-    left: 0
-  },
-  topRightCorner: {
-    position: 'absolute',
-    top: 0,
-    right: 0
-  },
-  bottomLeftCorner: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0
-  },
-  bottomRightCorner: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0
-  },
-  topMask: {
-    position: 'absolute',
-    top: 0
-  },
-  leftMask: {
-    position: 'absolute',
-    left: 0
-  },
-  rightMask: {
-    position: 'absolute',
-    right: 0
-  },
-  bottomMask: {
-    position: 'absolute',
-    bottom: 0
-  }
 });

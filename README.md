@@ -1,6 +1,13 @@
 
 # React Native Modern QR Scanner
 
+
+[![npm version](https://img.shields.io/npm/v/react-native-modern-qrscanner)](https://www.npmjs.com/package/react-native-modern-qrscanner)
+[![npm downloads](https://img.shields.io/npm/dw/react-native-modern-qrscanner)](https://www.npmjs.com/package/react-native-modern-qrscanner)
+[![Coverage Status](https://coveralls.io/repos/github/calintamas/react-native-modern-qrscanner/badge.svg?branch=master)](https://coveralls.io/github/calintamas/react-native-modern-qrscanner?branch=main)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+
 A powerful and customizable QR code scanner component for React Native applications.
 
 ## Features
@@ -10,8 +17,15 @@ A powerful and customizable QR code scanner component for React Native applicati
 - Supports both iOS and Android platforms.
 - Provides hooks for various QR code scanning events.
 
-## Installation
 
+## Demo
+
+
+![toast gif](./docs/demo.gif)
+
+
+## Installation
+x
 ```bash
 npm install react-native-modern-qrscanner
 ```
