@@ -25,7 +25,7 @@ A powerful and customizable QR code scanner component for React Native applicati
 
 
 ## Installation
-x
+
 ```bash
 npm install react-native-modern-qrscanner
 ```
