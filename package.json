@@ -1,6 +1,6 @@
 {
   "name": "react-native-modern-qrscanner",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A modern-designed and powerful QR code scanner for React Native with advanced features.",
   "main": "index.js",
   "nativePackage": true,
@@ -36,7 +36,10 @@
     "react-native-qr-generator",
     "secure-qr-scanner",
     "fast-qr-code-scanning",
-    "easy-qr-code-reader"
+    "easy-qr-code-reader",
+    "multi-format-qr",
+    "qr-code-authentication",
+    "dynamic-qr-code-scanning"
   ],
   "author": "Jerry Lee",
   "license": "MIT",
