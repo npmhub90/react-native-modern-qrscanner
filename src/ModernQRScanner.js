@@ -115,12 +115,10 @@ export default class ModernQRScanner extends PureComponent {
   androidBarCode = e => {
   
     if (this.props.isRepeatScan) {
-      Vibration.vibrate();
       this.props.onRead(e);
     } else {
       if (!this.isShowCode) {
         this.isShowCode = true;
-        Vibration.vibrate();
         this.props.onRead(e);
       }
     }
